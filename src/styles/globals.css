@@ -1,0 +1,91 @@
+:root {
+  /* Light Theme */
+  --light-bg: #0a192f;  /* Dark blue background */
+  --light-text: #e6f1ff;  /* Light text for better contrast */
+  --light-accent: #00b4d8;
+  --light-accent-dark: #0077b6;
+
+  /* Dark Theme */
+  --dark-bg: #0a192f;
+  --dark-text: #e6f1ff;
+  --dark-accent: #48cae4;
+
+  /* Common */
+  --transition-speed: 0.3s;
+  --container-width: 1200px;
+  --section-padding: 5rem 1rem;
+
+  --bg-primary: var(--light-bg);
+  --text-primary: var(--light-text);
+  --accent-primary: #00b4d8;
+  --accent-secondary: #0077b6;
+}
+
+[data-theme="light"] {
+  --bg-primary: var(--light-bg);
+  --text-primary: var(--light-text);
+  --accent-primary: var(--light-accent);
+  --accent-secondary: var(--light-accent-dark);
+}
+
+[data-theme="dark"] {
+  --bg-primary: var(--dark-bg);
+  --text-primary: var(--dark-text);
+  --accent-primary: var(--dark-accent);
+  --accent-secondary: var(--dark-accent);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+section {
+  padding: var(--section-padding);
+  min-height: 100vh;
+}
+
+/* Button Styles */
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.btn:hover {
+  background-color: var(--accent-secondary);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 3rem 1rem;
+  }
+} 
